@@ -1,10 +1,11 @@
 name: Python HAOS
 version: "1.0.0"
 slug: python_haos
-description: Python enviroment for scripts
+description: Python environment for scripts
 startup: application
 boot: auto
 init: false
+
 arch:
   - amd64
   - aarch64
