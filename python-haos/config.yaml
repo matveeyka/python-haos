@@ -1,5 +1,5 @@
 name: Python HAOS
-version: "1.0.0"
+version: "1.0.2"
 slug: python_haos
 description: Python environment for scripts
 startup: application
