@@ -1,5 +1,5 @@
 name: EISCP HAOS
-version: "1.0.6-ei2"
+version: "1.0.6-ei3"
 slug: python_haos
 description: EISCP environment for Onkyo
 startup: application
