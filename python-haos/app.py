@@ -1,6 +1,6 @@
 try:
     import eiscp
     print("EISCP works!")
-except:
-    print("Something happened.", flush=True)
+except Exception as error:
+    print(f"Something happened: {error}", flush=True)
 
