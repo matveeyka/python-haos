@@ -1,7 +1,7 @@
-name: Python HAOS
-version: "1.0.3"
+name: EISCP HAOS
+version: "1.0.4"
 slug: python_haos
-description: Python environment for scripts
+description: EISCP environment for Onkyo
 startup: application
 boot: auto
 init: false
