@@ -34,7 +34,7 @@ def set_volume():
                 "error": "Volume must be between 0 and 100"
             }), 400
 
-        onkyo_volume = round(volume * 88 / 100)
+        onkyo_volume = round(volume * 176 / 100)
 
         receiver.command(f"volume={onkyo_volume}")
 
