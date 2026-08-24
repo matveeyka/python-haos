@@ -10,7 +10,7 @@ def power():
     cond = data["power"]
     
     try:
-        receiver.command(f"power {cond}")
+        receiver.command(f"power={cond}")
         return jsonify({
                 "status":"success",
                 "power": f"{cond}"
