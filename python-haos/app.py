@@ -56,7 +56,7 @@ def set_source():
 
     try:
         source = data["source"]
-        receiver.command(f"source {source}")
+        receiver.command(f"source={source}")
         return jsonify({
                 "success": True,
                 "source": source
