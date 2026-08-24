@@ -12,7 +12,7 @@ def power():
     try:
         receiver.command(f"power={cond}")
         return jsonify({
-                "status":"success",
+                "status": True,
                 "power": f"{cond}"
             })
     except Exception as error:
@@ -49,5 +49,22 @@ def set_volume():
             "success": False,
             "error": str(error)
         }), 500
+
+@app.route("/onkyo/source", methods=["POST"])
+def set_source():
+    data = request.get_json()
+
+    try:
+        source = data["source"]
+        receiver.command(f"source {source}")
+        return jsonify({
+                "success": True,
+                "source": source
+            })
+    except Exception as error:
+        return jsonify({
+                "success": False,
+                "error": str(error)
+            }), 500
 
 app.run(host="0.0.0.0", port=1111)
