@@ -24,22 +24,30 @@ def power():
 @app.route("/onkyo/volume", methods=["POST"])
 def set_volume():
     data = request.get_json()
-    volume = float(data["volume"])
-    
-    one_p_vol = 88/100
 
     try:
-        receiver.command(
-            f"volume={int(volume * one_p_vol)}"
-        )
+        volume = float(data["volume"])
+
+        if not 0 <= volume <= 100:
+            return jsonify({
+                "success": False,
+                "error": "Volume must be between 0 and 100"
+            }), 400
+
+        onkyo_volume = round(volume * 88 / 100)
+
+        receiver.command(f"volume={onkyo_volume}")
 
         return jsonify({
             "success": True,
-            "volume": volume
+            "volume": volume,
+            "onkyo_volume": onkyo_volume
         })
+
     except Exception as error:
         return jsonify({
-                "error": error
-            })
+            "success": False,
+            "error": str(error)
+        }), 500
 
 app.run(host="0.0.0.0", port=1111)
