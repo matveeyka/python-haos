@@ -1,9 +1,9 @@
+import eiscp
+
+receiver = eiscp.eISCP('192.168.98.127')
+
 try:
-    import eiscp
-
-    print("EISCP works!", flush=True)
-    print(f"EISCP location: {eiscp.__file__}", flush=True)
-
+    receiver.command('volume 55')
+    print("Check volume")
 except Exception as error:
-    print(f"Something happened: {error}", flush=True)
-
+    print(f"Error: {error}")
