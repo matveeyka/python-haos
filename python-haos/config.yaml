@@ -1,5 +1,5 @@
 name: EISCP HAOS
-version: "1.0.7-ei1"
+version: "1.0.7-meow"
 slug: python_haos
 description: EISCP environment for Onkyo
 startup: application
@@ -9,3 +9,6 @@ init: false
 arch:
   - amd64
   - aarch64
+
+ports:
+  1111/tcp: 1111
