@@ -16,10 +16,10 @@ def power():
                 "power": f"{cond}"
             })
     except Exception as error:
-	return jsonify({
-		"success": False,
-		"error": str(error)
-	    }), 500	
+	    return jsonify({
+		    "success": False,
+		    "error": str(error)
+	        }), 500	
 
 @app.route("/onkyo/volume", methods=["POST"])
 def set_volume():
