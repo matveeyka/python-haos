@@ -26,11 +26,11 @@ def set_volume():
     data = request.get_json()
     volume = float(data["volume"])
     
-    1_p_vol = 88/100
+    one_p_vol = 88/100
 
     try:
         receiver.command(
-            f"volume={int(volume * 1_p_vol)}"
+            f"volume={int(volume * one_p_vol)}"
         )
 
         return jsonify({
